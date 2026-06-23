@@ -1,4 +1,4 @@
-﻿import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { ThemeProvider } from './hooks/useTheme.jsx';
 import { Layout } from './components/ui/Layout';
 import { HomePage } from './pages/HomePage';
@@ -11,6 +11,10 @@ import { AuditMapPage } from './pages/AuditMapPage';
 import { ConfigPage } from './pages/ConfigPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { GenericPage } from './pages/GenericPage';
+import { FeaturesPage } from './pages/FeaturesPage';
+import { CareerPage } from './pages/CareerPage';
+import { DashboardsPage } from './pages/DashboardsPage';
+import { FinancePage } from './pages/FinancePage';
 
 function RootLayout() {
   return (
@@ -62,7 +66,7 @@ function EnterpriseContent() {
 function BlogContent() {
   return (
     <div className="space-y-4">
-      <p>Welcome to the Vouch Blog â€" your source for insights on audit automation, compliance updates, and best practices for CA firms.</p>
+      <p>Welcome to the Vouch Blog — your source for insights on audit automation, compliance updates, and best practices for CA firms.</p>
       <h3 className="text-lg font-semibold text-[var(--text)] mt-6">Latest Articles</h3>
       <div className="space-y-4">
         {[
@@ -73,34 +77,10 @@ function BlogContent() {
         ].map((article, i) => (
           <div key={i} className="glass rounded-xl p-4 border border-[var(--border)] hover:border-blue-500/30 transition-colors cursor-pointer">
             <div className="font-medium text-[var(--text)]">{article.title}</div>
-            <div className="text-xs text-[var(--text2)] mt-1">{article.date} â€¢ {article.read}</div>
+            <div className="text-xs text-[var(--text2)] mt-1">{article.date} • {article.read}</div>
           </div>
         ))}
       </div>
-    </div>
-  );
-}
-
-function CareersContent() {
-  return (
-    <div className="space-y-4">
-      <p>Join our mission to transform audit operations in India. We're always looking for talented individuals who are passionate about building world-class products.</p>
-      <h3 className="text-lg font-semibold text-[var(--text)] mt-6">Open Positions</h3>
-      <div className="space-y-4">
-        {[
-          { title: 'Senior Full-Stack Engineer', dept: 'Engineering', location: 'Mumbai (Hybrid)' },
-          { title: 'Product Manager - Fintech', dept: 'Product', location: 'Mumbai (On-site)' },
-          { title: 'DevOps Engineer', dept: 'Infrastructure', location: 'Remote (India)' },
-          { title: 'Sales Executive - CA Networks', dept: 'Sales', location: 'Delhi / Mumbai' },
-          { title: 'Customer Success Manager', dept: 'Operations', location: 'Mumbai (On-site)' },
-        ].map((job, i) => (
-          <div key={i} className="glass rounded-xl p-4 border border-[var(--border)] hover:border-emerald-500/30 transition-colors cursor-pointer">
-            <div className="font-medium text-[var(--text)]">{job.title}</div>
-            <div className="text-xs text-[var(--text2)] mt-1">{job.dept} â€¢ {job.location}</div>
-          </div>
-        ))}
-      </div>
-      <p className="mt-6">Send your resume to <a href="mailto:careers@vouch.tech" className="text-blue-400 hover:underline">careers@vouch.tech</a></p>
     </div>
   );
 }
@@ -183,6 +163,10 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: 'features', element: <FeaturesPage /> },
+      { path: 'career', element: <CareerPage /> },
+      { path: 'dashboards', element: <DashboardsPage /> },
+      { path: 'finance', element: <FinancePage /> },
       { path: 'pricing', element: <PricingPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'contact', element: <ContactPage /> },
@@ -190,38 +174,14 @@ const router = createBrowserRouter([
       { path: 'journey', element: <JourneyPage /> },
       { path: 'audit-map', element: <AuditMapPage /> },
       { path: 'config', element: <ConfigPage /> },
-      {
-        path: 'security',
-        element: <GenericPage title="Security" content={<SecurityContent />} />,
-      },
-      {
-        path: 'enterprise',
-        element: <GenericPage title="Enterprise" content={<EnterpriseContent />} />,
-      },
-      {
-        path: 'blog',
-        element: <GenericPage title="Blog" content={<BlogContent />} />,
-      },
-      {
-        path: 'careers',
-        element: <GenericPage title="Careers" content={<CareersContent />} />,
-      },
-      {
-        path: 'privacy',
-        element: <GenericPage title="Privacy Policy" content={<PrivacyContent />} />,
-      },
-      {
-        path: 'terms',
-        element: <GenericPage title="Terms of Service" content={<TermsContent />} />,
-      },
-      {
-        path: 'gst',
-        element: <GenericPage title="GST Compliance" content={<GSTContent />} />,
-      },
-      {
-        path: 'data-localization',
-        element: <GenericPage title="Data Localization" content={<DataLocalizationContent />} />,
-      },
+      { path: 'security', element: <GenericPage title="Security" content={<SecurityContent />} /> },
+      { path: 'enterprise', element: <GenericPage title="Enterprise" content={<EnterpriseContent />} /> },
+      { path: 'blog', element: <GenericPage title="Blog" content={<BlogContent />} /> },
+      { path: 'careers', element: <GenericPage title="Careers" content={<div />} /> },
+      { path: 'privacy', element: <GenericPage title="Privacy Policy" content={<PrivacyContent />} /> },
+      { path: 'terms', element: <GenericPage title="Terms of Service" content={<TermsContent />} /> },
+      { path: 'gst', element: <GenericPage title="GST Compliance" content={<GSTContent />} /> },
+      { path: 'data-localization', element: <GenericPage title="Data Localization" content={<DataLocalizationContent />} /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
@@ -230,5 +190,3 @@ const router = createBrowserRouter([
 export default function App() {
   return <RouterProvider router={router} />;
 }
-
-

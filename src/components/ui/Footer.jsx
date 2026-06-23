@@ -17,8 +17,8 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">{siteConfig.brand.logo}</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-transparent">
+                <img src="/logo.png" alt="Vouch logo" className="w-full h-full object-cover" />
               </div>
               <span className="font-bold font-display">{siteConfig.brand.name}</span>
             </div>

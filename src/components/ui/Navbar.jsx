@@ -40,14 +40,14 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-0 ${
+        scrolled ? 'glass shadow-lg border-0' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
-            <span className="text-white font-bold text-xl font-display">{siteConfig.brand.logo}</span>
+          <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+            <img src="/logo.png" alt="Vouch logo" className="w-full h-full object-cover" />
           </div>
           <span className="text-xl font-bold tracking-tight font-display">{siteConfig.brand.name}</span>
         </Link>
@@ -108,7 +108,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-[var(--border)] overflow-hidden"
+            className="lg:hidden glass border-t border-transparent overflow-hidden"
           >
             <div className="px-6 py-4 space-y-2">
               {siteConfig.nav.map((item) => (

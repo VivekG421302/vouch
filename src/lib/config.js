@@ -1,4 +1,4 @@
-﻿// Vouch Landing Page Configuration
+// Vouch Landing Page Configuration
 // Edit this file to customize all content, links, and redirects
 
 export const siteConfig = {
@@ -30,12 +30,12 @@ export const siteConfig = {
     youtube: 'https://youtube.com/@vouchtech',
   },
 
-  // Navigation Links
+  // ✅ UPDATED Navigation Links — 4 new pages now have proper routes
   nav: [
-    { label: 'Features', href: '/#features' },
-    { label: 'Career', href: '/#ftr' },
-    { label: 'Dashboards', href: '/#dashboards' },
-    { label: 'Finance', href: '/#finance' },
+    { label: 'Features', href: '/features' },
+    { label: 'Career', href: '/career' },
+    { label: 'Dashboards', href: '/dashboards' },
+    { label: 'Finance', href: '/finance' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'About', href: '/about' },
     { label: 'FAQ', href: '/faq' },
@@ -45,7 +45,9 @@ export const siteConfig = {
   // Footer Links
   footer: {
     product: [
-      { label: 'Features', href: '/#features' },
+      { label: 'Features', href: '/features' },
+      { label: 'Dashboards', href: '/dashboards' },
+      { label: 'Finance', href: '/finance' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Security', href: '/security' },
       { label: 'Enterprise', href: '/enterprise' },
@@ -55,7 +57,7 @@ export const siteConfig = {
       { label: 'About', href: '/about' },
       { label: 'Our Journey', href: '/journey' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Careers', href: '/careers' },
+      { label: 'Careers', href: '/career' },
       { label: 'Contact', href: '/contact' },
     ],
     legal: [
@@ -83,7 +85,7 @@ export const siteConfig = {
     { value: '99.8%', label: 'GPS Accuracy' },
   ],
 
-  // Feature Cards
+  // Feature Cards (unchanged)
   features: [
     {
       id: 'geo-fence',
@@ -165,57 +167,15 @@ export const siteConfig = {
     },
   ],
 
-  // Audit Types
-  auditTypes: [
-    {
-      id: 'statutory',
-      title: 'Statutory Audit',
-      description: 'Comprehensive annual audits mandated by the Companies Act, ensuring financial statements present a true and fair view.',
-      icon: 'Scale',
-      color: 'blue',
-      stats: '18,500+ audits completed',
-    },
-    {
-      id: 'internal',
-      title: 'Internal Audit',
-      description: 'Independent assurance on internal controls, risk management, and governance processes within organizations.',
-      icon: 'ShieldCheck',
-      color: 'emerald',
-      stats: '12,300+ audits completed',
-    },
-    {
-      id: 'tax',
-      title: 'Tax Audit',
-      description: 'Section 44AB compliance audits for businesses with turnover exceeding prescribed limits under Income Tax Act.',
-      icon: 'Calculator',
-      color: 'amber',
-      stats: '9,800+ audits completed',
-    },
-    {
-      id: 'gst',
-      title: 'GST Audit',
-      description: 'Annual reconciliation of GSTR-1, GSTR-3B, and GSTR-9 with financial records for turnover above Rs.5 Crore.',
-      icon: 'Receipt',
-      color: 'violet',
-      stats: '7,200+ audits completed',
-    },
-    {
-      id: 'stock',
-      title: 'Stock Audit',
-      description: 'Physical verification of inventory, valuation assessment, and reconciliation with book records for lenders.',
-      icon: 'Package',
-      color: 'rose',
-      stats: '5,100+ audits completed',
-    },
-    {
-      id: 'forensic',
-      title: 'Forensic Audit',
-      description: 'Investigation of financial fraud, asset misappropriation, and litigation support with expert witness testimony.',
-      icon: 'Search',
-      color: 'cyan',
-      stats: '1,400+ audits completed',
-    },
-  ],
+    // Audit Types
+    auditTypes: [
+      { id: 'statutory', title: 'Statutory Audit', description: 'Comprehensive annual audits mandated by the Companies Act.', icon: 'Scale', color: 'blue', stats: '18,500+ audits completed' },
+      { id: 'internal', title: 'Internal Audit', description: 'Independent assurance on internal controls and governance.', icon: 'ShieldCheck', color: 'emerald', stats: '12,300+ audits completed' },
+      { id: 'tax', title: 'Tax Audit', description: 'Section 44AB compliance audits and filings.', icon: 'Calculator', color: 'amber', stats: '9,800+ audits completed' },
+      { id: 'gst', title: 'GST Audit', description: 'Annual reconciliation of GST filings and records.', icon: 'Receipt', color: 'violet', stats: '7,200+ audits completed' },
+      { id: 'stock', title: 'Stock Audit', description: 'Physical verification and reconciliation of inventory.', icon: 'Package', color: 'rose', stats: '5,100+ audits completed' },
+      { id: 'forensic', title: 'Forensic Audit', description: 'Investigation of fraud, asset misappropriation, and litigation support.', icon: 'Search', color: 'cyan', stats: '1,400+ audits completed' },
+    ],
 
   // FTR Tiers
   ftrTiers: [
@@ -225,7 +185,7 @@ export const siteConfig = {
     { name: 'Elite', range: '100+ visits', color: 'emerald', progress: 100 },
   ],
 
-  // Dashboard Tabs with detailed content
+  // Dashboard Tabs
   dashboardTabs: [
     { id: 'auditor', label: 'Auditor', icon: 'User' },
     { id: 'ca', label: 'CA Firm', icon: 'Building2' },
@@ -236,70 +196,66 @@ export const siteConfig = {
   // Role Overviews
   roleOverviews: {
     auditor: {
-      title: 'For Field Auditors',
-      subtitle: 'Your Complete Mobile Command Center',
-      description: 'Auditors get a dedicated mobile-first experience designed for life on the field. Mark attendance with biometric precision, submit expenses with receipt capture, track your FTR score, and receive real-time assignment notifications.',
+      title: 'Auditor Portal',
+      subtitle: 'For field auditors on the ground',
+      description: 'Everything an auditor needs for their daily workflow — shift schedules, GPS check-in, expense claims, and payslip visibility — in one clean mobile-first interface.',
       features: [
-        'One-tap biometric attendance with GPS + selfie',
-        'Offline mode for low-connectivity areas',
-        'Expense submission with auto-categorization',
-        'FTR score tracking and skill development',
-        'Direct communication with CA firm admins',
-        'Payroll visibility and payslip downloads',
+        'One-tap GPS geo-fence check-in with selfie',
+        'Daily shift schedule and client location',
+        'Expense claim submission with photo receipts',
+        'Monthly payslip and earnings history',
+        'Offline mode with auto-sync on reconnect',
       ],
       metrics: [
-        { label: 'Avg. Daily Visits', value: '3.2' },
-        { label: 'Expense Approval Time', value: '< 24hrs' },
+        { label: 'Check-in Speed', value: '< 10s' },
         { label: 'GPS Accuracy', value: '99.8%' },
+        { label: 'Offline Support', value: '24h' },
       ],
     },
     ca: {
-      title: 'For CA Firms',
-      subtitle: 'Practice Management at Scale',
-      description: 'CA firms get a comprehensive command center to manage hundreds of auditors across multiple clients. Real-time visibility, automated compliance, and AI-powered insights reduce administrative overhead by 70%.',
+      title: 'CA Firm Portal',
+      subtitle: 'For Chartered Accountants managing teams',
+      description: 'Complete visibility over your entire audit team — who is where, what\'s verified, what\'s pending, and the live P&L of your firm — all in one command center.',
       features: [
-        'Real-time auditor tracking on interactive map',
-        'Automated payroll with TDS compliance',
-        'Client billing with GST invoice generation',
-        'AI anomaly detection for attendance fraud',
-        'Multi-client assignment management',
-        'Regulatory compliance dashboard',
+        'Live map of all active auditors across Mumbai',
+        'Attendance verification with one-click approval',
+        'Consolidated billing and invoice generation',
+        'Anomaly alerts for geo-fence violations',
+        'Monthly revenue analytics per client',
       ],
       metrics: [
-        { label: 'Admin Time Saved', value: '70%' },
-        { label: 'Billing Accuracy', value: '99.9%' },
-        { label: 'Client Satisfaction', value: '4.8/5' },
+        { label: 'Team Visibility', value: '100%' },
+        { label: 'Invoice Time', value: '< 30s' },
+        { label: 'Report Export', value: '1-click' },
       ],
     },
     company: {
-      title: 'For Client Companies',
-      subtitle: 'Transparency in Every Audit',
-      description: 'Client companies get unprecedented visibility into their audit process. Track assigned auditors, verify visit authenticity, and receive automated compliance reports â€" all from a single dashboard.',
+      title: 'Company Portal',
+      subtitle: 'For client companies being audited',
+      description: 'Real-time visibility into which auditors are on-site, verification status of visits, and audit completion dashboards — without needing to chase your CA firm.',
       features: [
-        'Real-time auditor visit verification',
-        'GPS + selfie proof for every audit',
-        'Automated compliance status reports',
-        'Document vault with audit trail',
-        'Direct communication with CA firm',
-        'Historical audit data and analytics',
+        'Real-time auditor presence confirmation',
+        'Visit verification status per location',
+        'Historical audit log with timestamps',
+        'Direct escalation channel to CA firm',
+        'Downloadable visit certificates',
       ],
       metrics: [
-        { label: 'Visit Verification', value: '100%' },
-        { label: 'Report Delivery', value: '< 48hrs' },
-        { label: 'Compliance Rate', value: '99.5%' },
+        { label: 'Transparency', value: '100%' },
+        { label: 'Avg Verification', value: '< 2min' },
+        { label: 'Dispute Rate', value: '0.1%' },
       ],
     },
     admin: {
-      title: 'For Platform Admins',
-      subtitle: 'Enterprise-Grade Control',
-      description: 'Platform administrators get deep operational insights, user management tools, and system health monitoring. Manage KYC verifications, handle disputes, and ensure platform-wide compliance.',
+      title: 'Admin Portal',
+      subtitle: 'For Vouch platform administrators',
+      description: 'The God view — full platform health, KYC approvals, revenue dashboards, user management, and system monitoring across the entire Vouch ecosystem.',
       features: [
-        'User onboarding and KYC verification pipeline',
-        'Platform revenue and transaction monitoring',
-        'Dispute resolution and audit trail access',
-        'System health and API performance metrics',
-        'Role-based access control (RBAC)',
-        'Custom report builder and analytics',
+        'Platform-wide revenue and usage analytics',
+        'KYC verification queue with UIDAI integration',
+        'System health monitoring and alerting',
+        'User onboarding and role management',
+        'Compliance and audit trail for regulators',
       ],
       metrics: [
         { label: 'Platform Uptime', value: '99.99%' },
@@ -313,7 +269,7 @@ export const siteConfig = {
   pricing: [
     {
       name: 'Starter',
-      price: 'â‚¹2,999',
+      price: '₹2,999',
       period: '/month',
       description: 'Perfect for small CA firms with up to 5 auditors.',
       features: [
@@ -328,7 +284,7 @@ export const siteConfig = {
     },
     {
       name: 'Professional',
-      price: 'â‚¹7,999',
+      price: '₹7,999',
       period: '/month',
       description: 'For growing firms with advanced compliance needs.',
       features: [
@@ -438,62 +394,14 @@ export const siteConfig = {
 
   // Journey Timeline
   journey: [
-    {
-      year: '2024',
-      month: 'January',
-      title: 'Vouch Founded',
-      description: 'Amit Sharma and Priya Patel founded Vouch with a vision to automate field audit operations for CA firms.',
-      milestone: true,
-    },
-    {
-      year: '2024',
-      month: 'June',
-      title: 'First 10 CA Firms Onboarded',
-      description: 'Launched the beta platform with GPS geo-fencing and basic attendance tracking.',
-      milestone: false,
-    },
-    {
-      year: '2024',
-      month: 'September',
-      title: 'Seed Funding Raised',
-      description: 'Raised $2.5M in seed funding from leading Indian fintech investors to scale operations.',
-      milestone: true,
-    },
-    {
-      year: '2025',
-      month: 'January',
-      title: 'AI Insights Engine Launched',
-      description: 'Introduced GPT-powered anomaly detection and predictive scheduling for audit firms.',
-      milestone: false,
-    },
-    {
-      year: '2025',
-      month: 'March',
-      title: '500+ CA Firms Milestone',
-      description: 'Crossed 500 active CA firms with 25,000+ verified audits completed on the platform.',
-      milestone: true,
-    },
-    {
-      year: '2025',
-      month: 'August',
-      title: 'GST Invoice Engine',
-      description: 'Launched fully automated GST-compliant invoicing with e-invoice QR generation.',
-      milestone: false,
-    },
-    {
-      year: '2026',
-      month: 'January',
-      title: 'Series A Funding',
-      description: 'Raised $12M in Series A to expand to 10+ cities and build enterprise features.',
-      milestone: true,
-    },
-    {
-      year: '2026',
-      month: 'June',
-      title: '50,000+ Audits Verified',
-      description: 'Reached 50,000 verified audits with 99.8% GPS accuracy and zero compliance failures.',
-      milestone: true,
-    },
+    { year: '2024', month: 'January', title: 'Vouch Founded', description: 'Amit Sharma and Priya Patel founded Vouch with a vision to automate field audit operations for CA firms.', milestone: true },
+    { year: '2024', month: 'June', title: 'First 10 CA Firms Onboarded', description: 'Launched the beta platform with GPS geo-fencing and basic attendance tracking.', milestone: false },
+    { year: '2024', month: 'September', title: 'Seed Funding Raised', description: 'Raised $2.5M in seed funding from leading Indian fintech investors to scale operations.', milestone: true },
+    { year: '2025', month: 'January', title: 'AI Insights Engine Launched', description: 'Introduced GPT-powered anomaly detection and predictive scheduling for audit firms.', milestone: false },
+    { year: '2025', month: 'March', title: '500+ CA Firms Milestone', description: 'Crossed 500 active CA firms with 25,000+ verified audits completed on the platform.', milestone: true },
+    { year: '2025', month: 'August', title: 'GST Invoice Engine', description: 'Launched fully automated GST-compliant invoicing with e-invoice QR generation.', milestone: false },
+    { year: '2026', month: 'January', title: 'Series A Funding', description: 'Raised $12M in Series A to expand to 10+ cities and build enterprise features.', milestone: true },
+    { year: '2026', month: 'June', title: '50,000+ Audits Verified', description: 'Reached 50,000 verified audits with 99.8% GPS accuracy and zero compliance failures.', milestone: true },
   ],
 
   // Mumbai Audit Locations (for the map)
@@ -514,5 +422,3 @@ export const siteConfig = {
 };
 
 export default siteConfig;
-
-

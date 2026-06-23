@@ -40,7 +40,7 @@ export function FTRSection() {
             </AnimatedSection>
 
             <div className="space-y-4">
-              {siteConfig.ftrTiers.map((tier, i) => {
+              {(siteConfig.ftrTiers || []).map((tier, i) => {
                 const colors = colorClasses[tier.color] || colorClasses.gray;
                 return (
                   <AnimatedSection key={tier.name} delay={0.3 + i * 0.1}>
